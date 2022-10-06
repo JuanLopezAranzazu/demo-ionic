@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>tab4</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Search posts</ion-label>
+    <ion-input placeholder="Enter title" [(ngModel)]="titleSearch"></ion-input>
+    <ion-button slot="end" size="default" (click)="getPostsSearch()">
+      Search
+    </ion-button>
+  </ion-item>
+  <ion-item detail="true" *ngFor="let post of postsFilter">
+    <ion-label>
+      <h3>{{post?.title}}</h3>
+      <p>{{post?.body}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>
